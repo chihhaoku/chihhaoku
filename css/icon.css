@@ -1,0 +1,41 @@
+.ico-rg{
+    content: '';
+    background:url('../icons/researchgate.png');
+    background-size:cover;
+        position:absolute;
+    width:45px;
+    height:45px;
+    margin-left:10px;
+   border-radius: 5px;
+}
+
+.ico-gs{
+    content: '';
+    background:url('../icons/googlescholar.png');
+    background-size:cover;
+        position:absolute;
+    width:45px;
+    height:45px;
+    margin-left:-110px;
+   border-radius: 5px;
+}
+
+
+.glyphicon {  margin-bottom: 2px;
+              margin-right: 2px;        
+}
+
+.leftAlign{
+	  text-align: left;
+}
+
+.contactMargin {
+	position: inherit;
+
+}
+
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}
