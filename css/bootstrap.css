@@ -231,8 +231,8 @@ th {
   p,
   h2,
   h3 {
-    orphans: 3;
-    widows: 3;
+    orphans: 2;
+    widows: 2;
   }
   h2,
   h3 {
