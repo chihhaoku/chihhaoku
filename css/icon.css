@@ -16,10 +16,20 @@
         position:absolute;
     width:45px;
     height:45px;
-    margin-left:-110px;
+    margin-left:-95px;
    border-radius: 5px;
 }
 
+.ico-me{
+    content: '';
+    background:url('../icons/mendeley.png');
+    background-size:cover;
+        position:absolute;
+    width:45px;
+    height:45px;
+    margin-left:-150px;
+   border-radius: 5px;
+}
 
 .glyphicon {  margin-bottom: 10px;
               margin-right: 2px;        
