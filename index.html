@@ -48,6 +48,8 @@ p{margin:0 0 12px;max-width:68ch}
 .projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px}
 .projects div b{display:block;font-size:16px}
 .projects div span{color:var(--muted);font-size:14.5px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 6px;padding:0}
+.tags li{background:var(--tint);color:var(--accent-dk);border-radius:999px;padding:5px 14px;font-size:14.5px;font-weight:600}
 .courses{list-style:none;margin:0;padding:0}
 .courses li{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding-block:8px;border-bottom:1px solid var(--line)}
 .courses li:last-child{border-bottom:0}
@@ -119,6 +121,15 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
 <section id="research">
   <h2>Research</h2>
   <p>Text analytics and visual analytics for decision support, applied to public safety, hospitality and tourism, and online platforms.</p>
+  <h3>Current work</h3>
+  <ul class="tags">
+    <li>Large language models</li>
+    <li>Generative AI and human oversight</li>
+    <li>AI governance and policy</li>
+    <li>Content moderation on digital platforms</li>
+    <li>Trust and transparency in AI-assisted decisions</li>
+  </ul>
+  <h3>Selected projects</h3>
   <div class="projects">
     <div><b>Crime report analysis</b><span>Entity extraction, document similarity and visualization to help analysts link related crimes.</span></div>
     <div><b>Online reviews and response strategy</b><span>Deep learning and linguistic features to identify the critical reviews firms should answer first.</span></div>
