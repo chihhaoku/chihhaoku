@@ -1,1267 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Chih-Hao Ku (Justin)</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/scrolling-nav.css" rel="stylesheet">
-
-
-	 <!-- Icons -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="css/icon.css">
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chih-Hao (Justin) Ku</title>
+<meta name="description" content="Chih-Hao (Justin) Ku, Associate Professor of Information Technology and Decision Sciences, University of North Texas">
+<meta name="author" content="Chih-Hao Ku">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Libre+Franklin:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow reading column; sticky top nav; sections separated by rules, no cards */
+:root{
+  --bg:#ffffff; --ink:#1d2621; --muted:#5f6d65; --line:#e3e9e5; --accent:#00853e; --accent-dk:#005826; --tint:#f3f8f5;
+  --head:"Source Serif 4", Georgia, serif; --body:"Libre Franklin", "Segoe UI", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.6}
+a{color:var(--accent-dk);text-underline-offset:2px}
+a:hover{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:860px;margin:0 auto;padding-inline:20px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;flex-wrap:wrap}
+nav .brand{font-family:var(--head);font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+nav ul{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none;margin:0;padding:0;font-size:14.5px}
+nav ul a{color:var(--muted);text-decoration:none;font-weight:500}
+nav ul a:hover{color:var(--accent-dk)}
+header.hero{padding-block:48px 28px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:32px;align-items:start}
+.hero img{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid var(--tint)}
+h1{font-family:var(--head);font-size:clamp(28px,4.4vw,38px);line-height:1.15;margin:0 0 6px;text-wrap:balance}
+.role{color:var(--muted);margin:0 0 14px;font-size:15.5px}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.links a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:14px;text-decoration:none;color:var(--ink);background:#fff}
+.links a:hover{border-color:var(--accent);color:var(--accent-dk)}
+section{padding-block:30px;border-top:1px solid var(--line)}
+h2{font-family:var(--head);font-size:24px;margin:0 0 16px;color:var(--accent-dk)}
+h3{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:22px 0 8px;font-weight:600}
+p{margin:0 0 12px;max-width:68ch}
+.pubs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.pubs li{padding-left:14px;border-left:3px solid var(--tint)}
+.pubs .t{font-weight:600}
+.pubs .v{color:var(--muted);font-size:15px}
+.pubs .v i{color:var(--ink)}
+.btn{display:inline-block;margin-top:16px;background:var(--accent-dk);color:#fff;text-decoration:none;border-radius:6px;padding:8px 16px;font-weight:600;font-size:14.5px}
+.btn:hover{background:var(--accent);color:#fff}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px}
+.projects div b{display:block;font-size:16px}
+.projects div span{color:var(--muted);font-size:14.5px}
+.courses{list-style:none;margin:0;padding:0}
+.courses li{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding-block:8px;border-bottom:1px solid var(--line)}
+.courses li:last-child{border-bottom:0}
+.courses .code{font-variant-numeric:tabular-nums;font-weight:600;min-width:92px}
+.courses .site{margin-left:auto;font-size:14.5px}
+.past{color:var(--muted);font-size:15px}
+.past b{color:var(--ink);font-weight:600}
+.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 28px}
+.people p{margin:0 0 8px;font-size:15.5px}
+.people .yr{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:14px}
+@media (max-width:640px){
+  header.hero{grid-template-columns:minmax(0,1fr);gap:18px;padding-top:32px}
+  .hero img{width:112px;height:112px}
+  .projects,.people{grid-template-columns:minmax(0,1fr)}
+  .courses .site{margin-left:0}
+}
+</style>
 </head>
+<body>
 
-<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Chih-Hao (Justin) Ku</a>
+    <ul>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#students">Students</a></li>
+    </ul>
+  </div>
+</nav>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<div class="wrap" id="top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Chih-Hao Ku (Justin)</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#people">People</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#project">Projects</a>
-                    </li>
-
-					<li>
-                        <a class="page-scroll" href="#class">Classes</a>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Intro Section -->
-    <section id="intro" class="intro-section">
-        <div class="container">
-		<div class="row">
-        <div class="col-lg-12">
-        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="image/ku.png" class="aboutme" width="140" height="140"></a>
-        <h3>Chih-Hao Ku (Justin) </h3>
-	
-		 </div>
-		<p>
-		<a class="btn btn-primary btn-large" href="#aboutModal" data-toggle="modal" data-target="#myModal">Learn more</a>
-		</p>
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title" id="myModalLabel">More About Justin</h4>
-                    </div>
-                <div class="modal-body">
-                   
-                    <img src="image/ku.png" class="aboutme" width="140" height="140"> </div>
-                    <h3 class="media-heading">Chih-Hao Ku (Justin) <small>Ph.D.</small></h3>
-                    <span><strong>Interests: </strong></span>
-                        <span class="label label-warning">Natural Language Processing</span>
-                        <span class="label label-info">Visual Analytics</span>
-                        <span class="label label-success">Business Analytics</span>
-						<span class="label label-info">Deep Learning, LLM</span>
-                    <hr>
-                     
-					<div style="padding: 10px; margin: 10px;">
-                    <p class="text-left"><strong>Bio: </strong><br>
-					<p class="text-left">
-                    Dr. Ku is an Assistant Professor of ITDS, G. Brint Ryan College of Business at University of North Texas (UNT) (2023-). 
-                    He is currently an associte editor of the Journal of Computer Information Systems.
-					</p>
-					<p class="text-left">
-                     Dr. Ku received his M.S. and Ph.D. in Information Systems and Technology at
-					 Claremont Graduate University.
-                     His research interests lie in the areas of information systems, computer science, business, psychology, social networks, and e-health.
-                     From a broad perspective, his research focuses on (
-					 1) how to apply Natural Language Processing (
-					 NLP) techniques to identify relevant information in digital reports,
-					 (2) how to turn a large volume of reports into useful and actionable knowledge for
-					 decision makers, and
-					 (3) how to apply visualization techniques to present a large amount of digital information.
-					 Before joining UNT, he was an Assistant Professor at Cleveland State University (2019- 2023).
-					</p>
-
-					 <p class="text-left">
-					 His work has appeared in Journal of MIS, Information & Management, Tourism Management,  International Journal of Information Management (IJIM),
-					 Journal of the American Society for Information Science Technology (JASIST), Journal of Information Systems, Government Information Quarterly, Journal of Busienss Research
-					 and in conferences such as AMCIS and HICSS among others.
-					</p>
-					</div>
-                    <br>
-                  
-                </div>
-                <div class="modal-footer">
-                   
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Enough about Justin</button>
-                 
-                </div>
-            </div>
-        </div>
-    </div>
-
-			<div class="jumbotron">
-			<p class="leftAlign">
-              Chih-Hao (Justin) is an Assitant Professor in the Department of Information Technology and Decision Science (ITDS), G. Brint Ryan College of Business at University of North Texas. He is currently interested in text mining, deep learning, visual analytics, natural language processing, and healthcare. Any research collaboration is welcome. He is currently an Associate Editor of the Journal of Computer Information Systems.
-			</p>
-			   <br>
-
-                 <small><cite title="Denton, TX USA"> Denton, TX USA
-				 <i class="glyphicon glyphicon-map-marker" >
-                        </i></cite></small>
-                        <p>
-						    <a href="mailto:@csuohio.edu" target="_top">
-                            <i class="glyphicon glyphicon-envelope"></i> chih-hao.ku@unt.edu
-                            <br>
-							</a>
-							<a href="tel:">
-							<i class="glyphicon glyphicon-earphone">Office:216-687-4755</i>
-							</a>
-							<br>
-                            <i class="glyphicon glyphicon-globe"></i>
-							<a href="https://cob.unt.edu/people/chih-hao-ku.html" target="_blank"> Faculty Page</a>
-
-							<br>
-							<a href="https://maps.app.goo.gl/sP9ebYP4BLsJg7zh8" target="_blank">
-							<i class="glyphicon glyphicon-home">Office:BLB323D</i>
-							</a>
-						</p>
-                <br>
-
-				<a href="https://www.linkedin.com/in/noezlife/" target="_blank">
-                <i class="fa fa-linkedin-square" style="font-size:48px;color:blue"> </i>
-				</a>
-
-				<a href="https://www.researchgate.net/profile/Justin_Ku" target="_blank">
-                <i class="ico-rg" style="font-size:48px;color:red"> </i>
-				</a>
-
-
-				<a href="https://scholar.google.com/citations?user=B-FnCqYAAAAJ&hl=en" target="_blank">
-                <i class="ico-gs" style="font-size:48px;color:red"> </i>
-				</a>
-                <br>
-			</div>
-
-				<div class="_e725ae-textarea_btn _e725ae-not_focused">
-					<div class="_e725ae-transform_wrap">
-						<div class="_e725ae-status">
-						</div>
-					</div>
-				</div>
-			
-			<a class="btn btn-default page-scroll" href="#people">Click Me to Scroll Down!</a>
-
-		</div>
-
-    </section>
-
-    <!-- People Section -->
-    <section id="people" class="about-section">
-        <div class="container">
-            <div class="row">
- <div class="col-lg-12">
-<h3>Dissertation Committee</h3>
-   <div class="columnppl">
-    <div class="card">
-      <div class="containerppl">
-	    <p class="titleppl"> University of North Texas (2025-) </p>
-        <h5>  Padma, Susarla  </h5>
-		<h5>  DBA Student  </h5>
-		<h5> Committee Member  </h5>
-      </div>
+<header class="hero">
+  <img src="image/ku.png" alt="Chih-Hao (Justin) Ku">
+  <div>
+    <h1>Chih-Hao (Justin) Ku, Ph.D.</h1>
+    <p class="role">Associate Professor · Information Technology and Decision Sciences<br>G. Brint Ryan College of Business, University of North Texas</p>
+    <p>I study how natural language processing, large language models and visual analytics can turn large volumes of text, such as reports, reviews and social media, into knowledge decision makers can act on. My work has appeared in the <i>Journal of Management Information Systems</i>, <i>Information &amp; Management</i>, <i>Tourism Management</i>, <i>JASIST</i>, <i>Government Information Quarterly</i> and the <i>Journal of Business Research</i>, among others.</p>
+    <p>I am an Associate Editor of the <i>Journal of Computer Information Systems</i>. I received my M.S. and Ph.D. in Information Systems and Technology from Claremont Graduate University and taught at Cleveland State University before joining UNT in 2023. Research collaboration is welcome.</p>
+    <div class="links">
+      <a href="mailto:chih-hao.ku@unt.edu">chih-hao.ku@unt.edu</a>
+      <a href="https://scholar.google.com/citations?user=B-FnCqYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/noezlife/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.researchgate.net/profile/Justin_Ku" target="_blank" rel="noopener">ResearchGate</a>
+      <a href="https://cob.unt.edu/people/chih-hao-ku.html" target="_blank" rel="noopener">UNT Faculty Page</a>
+      <a href="https://maps.app.goo.gl/sP9ebYP4BLsJg7zh8" target="_blank" rel="noopener">Office BLB 323D</a>
     </div>
   </div>
+</header>
 
-   <div class="columnppl">
-    <div class="card">
-      <div class="containerppl">
-	    <p class="titleppl">Cleveland State University (2021-)</p>
-        <h5>Hamed Javidi</h5>
-        <h5>Ph.D. candidate  in Computer Science</h5>
-		<h5>Research Scientist in Cleveland Clinic  </h5>
-		<h5>Committee Member</h5>
-	  </div>
-    </div>
+<section id="publications">
+  <h2>Selected Publications</h2>
+  <ul class="pubs">
+    <li><span class="t">Predicting aspect-based sentiment using deep learning and information visualization: The impact of COVID-19 on the airline industry</span><br>
+      <span class="v">Chang, Y.-C., Ku, C.-H., &amp; Nguyen, D.-D. L. (2022). <i>Information &amp; Management</i>, 59(2), 103587. <a href="https://doi.org/10.1016/j.im.2021.103587" target="_blank" rel="noopener">DOI</a></span></li>
+    <li><span class="t">Online critical review classification in response strategy and service provider rating: Algorithms from heuristic processing, sentiment analysis to deep learning</span><br>
+      <span class="v">Zhu, J. J., Chang, Y.-C., Ku, C.-H., Li, S. Y., &amp; Chen, C.-J. (2021). <i>Journal of Business Research</i>, 129, 860–877. <a href="https://doi.org/10.1016/j.jbusres.2020.11.007" target="_blank" rel="noopener">DOI</a></span></li>
+    <li><span class="t">Using deep learning and visual analytics to explore hotel reviews and responses</span><br>
+      <span class="v">Chang, Y.-C., Ku, C.-H., &amp; Chen, C.-H. (2020). <i>Tourism Management</i>, 80, 104129. <a href="https://doi.org/10.1016/j.tourman.2020.104129" target="_blank" rel="noopener">DOI</a></span></li>
+    <li><span class="t">A crime reports analysis system to identify related crimes</span><br>
+      <span class="v">Ku, C.-H., et al. (2011). <i>Journal of the American Society for Information Science and Technology</i>. <a href="https://doi.org/10.1002/asi.21552" target="_blank" rel="noopener">DOI</a></span></li>
+  </ul>
+  <a class="btn" href="https://scholar.google.com/citations?user=B-FnCqYAAAAJ&amp;hl=en" target="_blank" rel="noopener">All publications on Google Scholar →</a>
+</section>
+
+<section id="research">
+  <h2>Research</h2>
+  <p>Text analytics and visual analytics for decision support, applied to public safety, hospitality and tourism, and online platforms.</p>
+  <div class="projects">
+    <div><b>Crime report analysis</b><span>Entity extraction, document similarity and visualization to help analysts link related crimes.</span></div>
+    <div><b>Online reviews and response strategy</b><span>Deep learning and linguistic features to identify the critical reviews firms should answer first.</span></div>
+    <div><b>Deep learning and tourism</b><span>Visual analytics and convolutional neural networks on 113,685 TripAdvisor reviews and managerial responses.</span></div>
+    <div><b>COVID-19 and the airline industry</b><span>Aspect-based sentiment analysis with BERT on airline reviews before and during the pandemic.</span></div>
+    <div><b>Social media analytics</b><span>Sentiment analysis, aspect extraction and deep learning on user-generated content in hospitality.</span></div>
+    <div><b>Crowdsourcing analysis</b><span>Topic modeling and sentiment analysis of crowdsourcing tasks on Amazon Mechanical Turk and of executives' social media.</span></div>
   </div>
+</section>
 
+<section id="teaching">
+  <h2>Teaching</h2>
+  <h3>University of North Texas</h3>
+  <ul class="courses">
+    <li><span class="code">BCIS 3610</span><span>Basic Information Systems</span><a class="site" href="https://chihhaoku.github.io/analytics_lab/" target="_blank" rel="noopener">Analytics Lab</a></li>
+    <li><span class="code">BCIS 5910</span><span>Agentic AI App Development</span><a class="site" href="https://chihhaoku.github.io/agentic-ai/" target="_blank" rel="noopener">Course site</a></li>
+    <li><span class="code">DSCI 5360</span><span>Data Visualization for Analytics</span><a class="site" href="https://chihhaoku.github.io/data-visualization/" target="_blank" rel="noopener">Course site</a></li>
+  </ul>
+  <h3>Previously taught</h3>
+  <p class="past"><b>Cleveland State University</b> · Data Mining · Advanced Systems Analysis &amp; Design · Systems Analysis &amp; Design · IT for Competitive Advantage</p>
+  <p class="past"><b>Lawrence Technological University</b> · Visual Analytics (<a href="https://chihhaoku.github.io/visual_analytics/" target="_blank" rel="noopener">archive</a>) · Database Modeling &amp; Administration · MIS · Systems Analysis &amp; Design · IT Capstone · Database I and II · Web Design</p>
+  <p class="past"><b>Middle Georgia State University</b> · Web Development · Database Principles · Introduction to Java · Web App Development · E-Commerce</p>
+</section>
 
-   <div class="columnppl">
-    <div class="card">
-      <div class="containerppl">
-	    <p class="titleppl">Cleveland State University (2021)</p>
-        <h5>Dylan S Zsigray </h5>
-		<h5>Under Honor Thesis: Leveraging Natural Language Processing in Keyword Research and Audience Segmentation</h5>
-        <h5>Committee Chair</h5>
-	  </div>
-    </div>
+<section id="students">
+  <h2>Students &amp; Mentoring</h2>
+  <h3>Current</h3>
+  <div class="people">
+    <p>Safari, Ali · Doctoral student, Research Assistant <span class="yr">(2024–)</span></p>
+    <p>Singh, Dushyant Pratap · Instructional Assistant <span class="yr">(2026–)</span></p>
   </div>
-
-<hr>
-  
-
-
-</div>
-
-<div class="row">
-<h3>Current Research/Teaching Assistant</h3>
-  <div class="columnppl">
-    <div class="card">
-      <div class="containerppl">
-	    <p class="titleppl">University of North Texas</p>
-         <h5> RA: Ali Safari, Doctoral student (2024-) </h5>
-          <h5> TA: TBA </h5>
-      </div>
-    </div>
+  <h3>Dissertation &amp; thesis committees</h3>
+  <div class="people">
+    <p>Padma, Susarla · DBA, UNT · Member <span class="yr">(2025–)</span></p>
+    <p>Hamed Javidi · Ph.D., Computer Science, Cleveland State · Member <span class="yr">(2021–)</span></p>
+    <p>Dylan S. Zsigray · Undergraduate Honors Thesis, Cleveland State · Chair <span class="yr">(2021)</span></p>
   </div>
-</div>
-  
-  
- <div class="row">
-<h3>Former Research Assistant</h3>
-     
-  <div class="columnppl">
-    <div class="card">
-      <div class="containerppl">
-	    <p class="titleppl">University of North Texas</p>
-		<h5>Kadiyala, Bhavana (2024-2025)</h5>
-        <h5>Polagoni, Anudeep Kumar (2023-2024)</h5>
-      </div>
-    </div>
+  <h3>Former research &amp; teaching assistants</h3>
+  <div class="people">
+    <p>Pulugurta, Sarvamangala Sahithi <span class="yr">· UNT, Summer 2026</span></p>
+    <p>Feleke, Etsub <span class="yr">· UNT, 2025–2026</span></p>
+    <p>Kadiyala, Bhavana <span class="yr">· UNT, 2024–2025</span></p>
+    <p>Polagoni, Anudeep Kumar <span class="yr">· UNT, 2023–2024</span></p>
+    <p>Jahnavi Chetankumar Trivedi <span class="yr">· Cleveland State, 2022–2023</span></p>
+    <p>Dnyanesh Vinay Nerkar, Jayant Mandhare <span class="yr">· Cleveland State, 2020–2021</span></p>
+    <p>Rahul Jakkam, Mohammed Hussain, Jinkai Xu <span class="yr">· Lawrence Tech, 2014–2018</span></p>
   </div>
-     
-  <div class="columnppl">
-    <div class="card">
-      <div class="containerppl">
-	    <p class="titleppl">Cleveland State University</p>
-        <h5>Jahnavi Chetankumar Trivedi (2022-2023)</h5>
-		<h5>Dnyanesh Vinay Nerkar,Jayant Mandhare (2020-2021)</h5>
-        
-      </div>
-    </div>
-  </div>
-     
+</section>
 
-
-
-  <div class="columnppl">
-    <div class="card">
-      <div class="containerppl">
-	    <p class="titleppl">Lawrence Tech. University (2014-2018)</p>
-        <h5>Rahul Jakkam, Mohammed Hussain, Jinkai Xu</h5>
-        
-      </div>
-    </div>
-  </div>
+<footer>
+  © 2026 Chih-Hao (Justin) Ku · Denton, Texas · <a href="mailto:chih-hao.ku@unt.edu">chih-hao.ku@unt.edu</a>
+</footer>
 
 </div>
-                </div>
-            </div>
-
-    <!-- Research Project Section -->
-    <section id="project" class="services-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Research Projects</h1>
-	<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-
-		 <!-- Crime Report Analysis -->
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="Bootstrap Thumbnail First" src="image/crimereport.jpg" />
-						<div class="caption">
-							<h3>
-								Crime Report Analysis
-							</h3>
-							<p class="text-left">
-						    Crime entity extraction, entity similarity, document similarity, classification, and crime report visualization
-							</p>
-							<p>
-							<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			 <a id="modal-64869" href="#modal-container-64869" role="button" class="btn" data-toggle="modal">Description</a>
-
-			<div class="modal fade" id="modal-container-64869" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-								×
-							</button>
-							<h4 class="modal-title" id="myModalLabel1">
-								Crime Analysis Project
-							</h4>
-						</div>
-						<div class="modal-body">
-						   <p class="text-left">
-							The growing number of textual reports poses a great challenge for investigative analysis. However, text visualization has the potential to address this problem by automating the analysis of text reports, thus reducing workloads and providing new insights for crime analysts. We are developing a crime report visualization system for such investigative analysis. Our system leverages natural language processing and visualization techniques to enhance decision support.
-							</p>
-						</div>
-						<div class="modal-footer">
-
-							<button type="button" class="btn btn-default" data-dismiss="modal">
-								Close
-							</button>
-
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-</div> 
-
-
-						</div>
-					
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-				
-					</div>
-				</div>
-
-
-	<!-- Social Media Analytics -->
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="Bootstrap Thumbnail Second" src="image/tripadvisor.jpg" />
-						<div class="caption">
-							<h3>
-								Social Media Analytics
-							</h3>
-							<p class="text-left">
-							Sentiment analysis, natural languaeg processing, social media analytics, deep-learning algorithms, Google Trends, TripAdvisor, Hospitality
-							</p>
-<p>
-
- <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			 <a id="modal-64879" href="#modal-container-64879" role="button" class="btn" data-toggle="modal">Description</a>
-
-			<div class="modal fade" id="modal-container-64879" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-								×
-							</button>
-							<h4 class="modal-title" id="myModalLabel2">
-								Hotel Review Analysis Project
-							</h4>
-						</div>
-						<div class="modal-body" >
-						 <p class="text-left">
-						   Analyzing and extracting insights from user-generated data has become a topic of interest among businesses and research groups because such data contains valuable information, e.g., consumers’ opinions, ratings, and recommendations of products and services. However, the true value of social media data is rarely discovered due to overloaded information. We propose an integrated framework which includes a data crawler, data preprocessing, sentiment-sensitive tree construction, convolution tree kernel classification, aspect extraction and category detection, deep-learning algorithms and visual analytics to gain insights into hotel ratings and reviews.
-						</p>
-						</div>
-						<div class="modal-footer">
-
-							<button type="button" class="btn btn-default" data-dismiss="modal">
-								Close
-							</button>
-
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-</div>
-
-
-						</div>
-						
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-					
-					</div>
-				</div>
-
-		<!-- Crowdsourcing Analysis -->
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="Bootstrap Thumbnail Third" src="image/crowdsourcing.jpg" />
-						<div class="caption">
-							<h3>
-								Crowdsourcing Analysis
-							</h3>
-							<p class="text-left">
-							   Crowdsourcing, Amazon Mechanical Turk, Accounting Research, Social Media
-							</p>
-							<p>
-
- <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			 <a id="modal-64889" href="#modal-container-64889" role="button" class="btn" data-toggle="modal">Description</a>
-
-			<div class="modal fade" id="modal-container-64889" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-								×
-							</button>
-							<h4 class="modal-title" id="myModalLabel3">
-								Crowdsourcing Analysis Project
-							</h4>
-						</div>
-						<div class="modal-body" >
-						 <p class="text-left">
-						  The use of crowdsourcing in accounting research is relatively low. Most research projects collected data through surveys and for conducting experiments through crowdsourcing platforms. Research project in computer science (CS) and information systems (IS) are more advanced in using crowdsourcing websites. Amazon Mechanical Turk (MTurk) is one of the most widely used crowdsourcing platforms in academic research. We craw human intelligence tasks (HITs) from MTurk and analyze HITs to gain insights into the collected data. We also use topic modeling, sentiment analysis, and information visualization techniques to analyze CEOs and CFOs tweets using crowdsourcing platforms.
-						  </p>
-						</div>
-						<div class="modal-footer">
-
-							<button type="button" class="btn btn-default" data-dismiss="modal">
-								Close
-							</button>
-
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-</div>
-
-						</div>
-						
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-					
-					</div>
-				</div>
-					
-			</div>
-			
-			
-					<div class="row">
-
-		 <!-- Crime Report Analysis -->
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="Bootstrap Thumbnail First" src="image/TourismManagement2020.jpg" />
-						<div class="caption">
-							<h3>
-								Deep learning & Tourism
-							</h3>
-							<p class="text-left">
-						    Deep learning; convolutional neural network; natural language processing; visual analytics; hospitality; tourism
-							</p>
-							<p>
-							<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			 <a id="modal-64969" href="#modal-container-64969" role="button" class="btn" data-toggle="modal">Description</a>
-
-			<div class="modal fade" id="modal-container-64969" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-								×
-							</button>
-							<h4 class="modal-title" id="myModalLabel4">
-								Deep learning & Tourism
-							</h4>
-						</div>
-						<div class="modal-body">
-						   <p class="text-left">
-							This study aims to use computational linguistics, visual analytics, and deep learning techniques to analyze hotel reviews and responses collected on TripAdvisor and to identify response strategies. To this end, we collected and analyzed 113,685 hotel reviews and responses and their semantic and syntactic relations. We are among the first to use visual analytics and deep learning-based natural language processing to empirically identify managerial responses. The empirical results indicate that our proposed multi-feature fusion, convolutional neural network model can make different types of data complement each other, thereby outperforming the comparisons. The visualization results can also be used to improve the performance of the proposed model and provide insights into response strategies, which further shows the theoretical and technical contributions of this study.
-							</p>
-						</div>
-						<div class="modal-footer">
-
-							<button type="button" class="btn btn-default" data-dismiss="modal">
-								Close
-							</button>
-
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-</div>
-					
-
-						</div>
-						
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-					
-					</div>
-				</div>
-
-
-	<!-- Social Media Analytics -->
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="Bootstrap Thumbnail Second" src="image/I&M2020.jpg" />
-						<div class="caption">
-							<h3>
-								COVID-19 on Airline Industry
-							</h3>
-							<p class="text-left">
-							Aspect-based Sentiment Analysis, NLP, Deep Learning, Bidirectional Encoder Representations from Transformers (BERT)
-							</p>
-<p>
-
- <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			 <a id="modal-64979" href="#modal-container-64979" role="button" class="btn" data-toggle="modal">Description</a>
-
-			<div class="modal fade" id="modal-container-64979" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-								×
-							</button>
-							<h4 class="modal-title" id="myModalLabel5">
-								COVID-19 on Airline Industry
-							</h4>
-						</div>
-						<div class="modal-body" >
-						 <p class="text-left">
-						 This study investigates customer satisfaction through aspect-level sentiment analysis and visual analytics. We collected and examined the flight reviews on TripAdvisor from January 2016 to August 2020 to gauge COVID-19's impact on passenger travel sentiment in several aspects. The use of deep learning and word embedding techniques, such as Bidirectional Encoder Representations from Transformers, have received little attention in information systems, management, and tourism research, especially for aspect-level sentiment analysis. To address this research gap, this paper aims to identify perceived aspect-based sentiments and predict unrated sentiments for various aspects. Ultimately, this study complements the existing sentiment analysis methods and extends the use of data-driven and visual analytics approaches to better understand customer satisfaction in the airline industry and within the context of the COVID-19 pandemic. Our proposed approach outperforms baseline comparisons and therefore offers both theoretical and managerial contributions.
-						 </p>
-						</div>
-						<div class="modal-footer">
-
-							<button type="button" class="btn btn-default" data-dismiss="modal">
-								Close
-							</button>
-
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-</div>
-
-
-						</div>
-				
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-				
-					</div>
-				</div>
-
-		<!-- Crowdsourcing Analysis -->
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="Bootstrap Thumbnail Third" src="image/JBR.jpg" />
-						<div class="caption">
-							<h3>
-								Online Critical Review Classification 
-							</h3>
-							<p class="text-left">
-							   Online review, response strategy, linguistic feature analysis, deep learning
-							</p>
-							<p>
-
- <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			 <a id="modal-64989" href="#modal-container-64989" role="button" class="btn" data-toggle="modal">Description</a>
-
-			<div class="modal fade" id="modal-container-64989" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-								×
-							</button>
-							<h4 class="modal-title" id="myModalLabel6">
-								Crowdsourcing Analysis Project
-							</h4>
-						</div>
-						<div class="modal-body" >
-						 <p class="text-left">
-						  The influence of negative online reviews is pronounced in the hospitality industry, and the immense volume of online reviews causes information overload. How to mine the online review information to identify critical reviews that firms might prioritize are crucial for the success of online response strategies. This research proposes and tests mechanisms for defining and identifying the critical online consumer reviews that firms could prioritize to optimize their online response strategies, while incorporating the latest artificial intelligence (AI) technology to deal with the overwhelming volume of information. Three sets of analytical tools are introduced: Heuristic Processing, Linguistic Feature Analysis, and Deep Learning-based Natural Language Processing (NLP), to extract review information. Twelve algorithms to classify critical reviews were developed accordingly and empirically tested for their effectiveness. Our econometric analysis of 110,146 online reviews from a chain operation in hospitality industry over seven years identifies six outstanding algorithms. Firm value rating, comment length, valence, and certain consumer emotions, in addition to past comment-response behavior, are found to be superior in predicting incoming review criticality. However, the service attributes such as urgency to reply and the feasibility of actions to take are not as informative. 
-						  </p>
-						</div>
-						<div class="modal-footer">
-
-							<button type="button" class="btn btn-default" data-dismiss="modal">
-								Close
-							</button>
-
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-</div>
-
-						</div>
-		
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-				
-					</div>
-				</div>
-					
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-	 <!-- Classes Section -->
-    <section id="class" class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Teaching Courses</h1>
-					<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="panel-group" id="panel-254470">
-                
-          <h4 class="text-left"> Course Teaching at University of North Texas </h4>
-
-
-				<!-- IST DSCI 5360 Data Visualization for Anaalytics -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					  <p class="text-left">
-						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-dsci5360">DSCI 5360 Data Visualization for Analytics </a>
-						 &nbsp;&nbsp;<a href="https://chihhaoku.github.io/data-visualization/" target='_blank'>Course Page</a>
-					  </p>
-					</div>
-					<div id="panel-element-dsci5360" class="panel-collapse collapse in">
-						<div class="panel-body">
-						 <p class="text-left">
-							This course emphasizes the importance of data-analytic thinking. 
-							It helps students view business problems from a data perspective and understand principles of extracting useful knowledge from data. 
-							Formulating data science solutions and evaluating the results requires mindful thinking. 
-							Students are expected to spend most time on understanding and processing the data. 
-							Next, they will consider appropriate methods to analyze and visualize data and provide useful knowledge for decision makers. 
-                            In this class, students will learn how to collect and process big data and learn a wide array of machine learning and visualization techniques. 
-							Students should be able to apply the techniques to our everyday life or solve business/research problems. 
-							For business students, Anaconda , Kaggle , Tableau , and R are popular options. 
-							For advanced users, D3.js will offer you interactive, flexible, and powerful to visualize data. 
-						 </p>
-
-						 <p class="text-left">
-						 Software tools: Anaconda, Python (data science libraries), Tableau
-						 </p>
-						</div>
-					
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-					
-
-					
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-					
-					</div>
-				</div>
-                
-                
-      <h4 class="text-left"> Course Teaching at Cleveland State University </h4>
-
-
-				<!-- IST 467/660 Data Mining -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					  <p class="text-left">
-					  </p>
-					</div>
-					<div id="panel-element-ist467" class="panel-collapse collapse">
-						<div class="panel-body">
-						 <p class="text-left">
-							This course emphasizes the importance of data-analytic thinking. 
-							It helps students view business problems from a data perspective and understand principles of extracting useful knowledge from data. 
-							Formulating data science solutions and evaluating the results requires mindful thinking. 
-							Students are expected to spend most time on understanding and processing the data. 
-							Next, they will consider appropriate methods to analyze and visualize data and provide useful knowledge for decision makers. 
-                            In this class, students will learn how to collect and process big data and learn a wide array of machine learning and visualization techniques. 
-							Students should be able to apply the techniques to our everyday life or solve business/research problems. 
-							For business students, Anaconda , Kaggle , Tableau , and R are popular options. 
-							For advanced users, D3.js will offer you interactive, flexible, and powerful to visualize data. 
-						 </p>
-
-						 <p class="text-left">
-						 Software tools: Anaconda, Python (data science libraries), Tableau
-						 </p>
-						</div>
-					
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-					
-
-					
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-					
-					</div>
-				</div>
-
-
-       <!-- IST 621 -->
-       <div class="panel panel-default">
-         <div class="panel-heading">
-           <p class="text-left">
-            <a class="panel-title" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-ist621">IST621 Adv. Systems Analytsis & Design</a>
-           </p>
-         </div>
-         <div id="panel-element-ist621" class="panel-collapse collapse">
-           <div class="panel-body">
-            <p class="text-left"> Software Engineer Projects and Software Development
-            </p>
-
-            <p class="text-left">
-            Software tools: Draw.io, Lucidchart, PowerApp, XAMPP
-            </p>
-           </div>
-         
-             <div class="_e725ae-textarea_btn _e725ae-not_focused">
-               <div class="_e725ae-transform_wrap">
-                 <div class="_e725ae-status">
-                 </div>
-               </div>
-             </div>
-        
-
-          
-             <div class="_e725ae-textarea_btn _e725ae-not_focused">
-               <div class="_e725ae-transform_wrap">
-                 <div class="_e725ae-status">
-                 </div>
-               </div>
-             </div>
-          
-         </div>
-       </div>
-
-
-       <!-- IST 321.603 -->
-       <div class="panel panel-default">
-         <div class="panel-heading">
-           <p class="text-left">
-            <a class="panel-title" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-ist321">IST321.603 Systems Analysis & Design</a>
-           </p>
-         </div>
-         <div id="panel-element-ist321" class="panel-collapse collapse">
-           <div class="panel-body">
-            <p class="text-left"> System Anlaysis Projects and Prototype Design
-            </p>
-
-            <p class="text-left">
-            Software tools: Visio, InVision, Draw.io, Lucidchart
-            </p>
-           </div>
-          
-             <div class="_e725ae-textarea_btn _e725ae-not_focused">
-               <div class="_e725ae-transform_wrap">
-                 <div class="_e725ae-status">
-                 </div>
-               </div>
-             </div>
-           
-
-          
-             <div class="_e725ae-textarea_btn _e725ae-not_focused">
-               <div class="_e725ae-transform_wrap">
-                 <div class="_e725ae-status">
-                 </div>
-               </div>
-             </div>
-          
-         </div>
-       </div>
-
-
-      <!-- IST 305 MIS -->
-       <div class="panel panel-default">
-         <div class="panel-heading">
-           <p class="text-left">
-            <a class="panel-title" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-ist305">IST305 IT for Competitive Advantege</a>
-           </p>
-         </div>
-         <div id="panel-element-ist305" class="panel-collapse collapse">
-           <div class="panel-body">
-            <p class="text-left"> Management Information Systems
-            </p>
-           </div>
-           
-             <div class="_e725ae-textarea_btn _e725ae-not_focused">
-               <div class="_e725ae-transform_wrap">
-                 <div class="_e725ae-status">
-                 </div>
-               </div>
-             </div>
-           
-
-           
-             <div class="_e725ae-textarea_btn _e725ae-not_focused">
-               <div class="_e725ae-transform_wrap">
-                 <div class="_e725ae-status">
-                 </div>
-               </div>
-             </div>
-        
-         </div>
-       </div>
-
-
-			 <h4 class="text-left"> Course Teaching at Lawrence Technological University </h4>
-
-				<!-- INT 7253 -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					  <p class="text-left">
-						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-int7253">INT 7253 Visual Analytics</a>
-						 &nbsp;&nbsp;<a href="https://chihhaoku.github.io/visual_analytics/" target='_blank'>Course Page</a>
-					  </p>
-					</div>
-					<div id="panel-element-int7253" class="panel-collapse collapse">
-						<div class="panel-body">
-						 <p class="text-left">
-							This course is an introduction to grounded principles and techniques of design, cognition, perception, and human-computer-interaction for visualizing data interactively. Today, the amount of digital data has grown exponentially, which posts a major challenge for business to manipulate and analyze data efficiently.  To gain useful insight from business data, the visual analytics techniques have drawn attention to the public. The major goal of this course is to teach business students, typically nonprogrammers, how to use visualization techniques to analyze big data. Students will work as groups and learn a wide array of visualization methods and be able to apply the techniques to our everyday life or research problems.
-						 </p>
-
-						 <p class="text-left">
-						 Software tools: Tableau, R, D3.js, PowerBI
-						 </p>
-						</div>
-						
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-					
-
-						
-							<div class="_e725ae-textarea_btn _e725ae-not_focused">
-								<div class="_e725ae-transform_wrap">
-									<div class="_e725ae-status">
-									</div>
-								</div>
-							</div>
-					
-					</div>
-				</div>
-
-
-				<!-- INT 6113 -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					   <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-int6113">INT 6113 Database Modeling & Admin.</a>
-	                   </p>
-					</div>
-					<div id="panel-element-int6113" class="panel-collapse collapse">
-						<div class="panel-body">
-						    <p class="text-left">
-							This course covers the principles, practices, design, and development of database management systems (DBMS) with an emphasis on the relational database systems. More specifically, it focuses on logical modeling, physical data modeling, normalization, and database query languages. Additionally, this course will explore database administration and security, database implementation, concurrency control, and even business intelligence and data warehousing. This course emphasizes on hands-on skills. Students are required to use database applications to practice database design and implementation through assignments and lab exercises and conduct a class project involving the data modeling, database development and implementation.
-							</p>
-							<p class="text-left">
-						   Applications: MS SQL Server, MongoDB, Visio
-						 </p>
-						</div>
-
-					</div>
-				</div>
-
-				<!-- INT 6043 -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					   <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-int6043">INT 6043 MIS</a>
-	                   </p>
-					</div>
-					<div id="panel-element-int6043" class="panel-collapse collapse">
-						<div class="panel-body">
-						    <p class="text-left">
-							Students electing INT6043 must be admitted to an LTU Master’s Degree program. Students should have a basic understanding of information technology principles acquired through personal and/or business use of IT systems, and should be fluent in the use of personal productivity tools such as e-mail, word processing software, spreadsheet/database software, and presentation software.
-							</p>
-							<p class="text-left">
-						   Emerging Technologies: Deep learning, Blackchain, Artificial Intelligence, Smart Home, Smart City
-						 </p>
-						</div>
-
-					</div>
-				</div>
-
-				<!-- INT 4203 -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					   <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-int4203">INT 4203  Systems Analysis & Design</a>
-					   </p>
-					</div>
-					<div id="panel-element-int4203" class="panel-collapse collapse">
-						<div class="panel-body">
-						    <p class="text-left">
-							Developing an information system from concept to implementation. Various system development methodology techniques and introduction to the system development life cycle. Special emphasis on developing good communication skills between users, clients, team members and others that are associated with the project.
-							</p>
-							<p class="text-left">
-						   Software tools: Visio, Mendix, Microsoft PowerApps
-						 </p>
-						</div>
-
-					</div>
-				</div>
-
-
-			<!-- INT 4303 -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					   <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-int4303">INT 4303 IT Capstone</a>
-					   </p>
-					</div>
-					<div id="panel-element-int4303" class="panel-collapse collapse">
-						<div class="panel-body">
-						    <p class="text-left">
-							This course focuses on the ultimate goal of solving business problems with technology and/or solving business problems in the world of technology. Students’ will apply the knowledge and skills acquired from all areas of study during their undergraduate BSIT experience to analyze and develop solutions to address business challenges. This journey is taken via extensive use of case studies and outside readings.
-							</p>
-							<p class="text-left">
-						   Type of Projects: Research, Competitions such as Kaggle, Data Analytics, Application Development
-						 </p>
-						</div>
-
-					</div>
-				</div>
-
-
-				<!-- INT 3803 -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					   <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-int3803">INT 3803 Database II</a>
-					   </p>
-					</div>
-					<div id="panel-element-int3803" class="panel-collapse collapse">
-						<div class="panel-body">
-						    <p class="text-left">
-							 This course covers mostly hands-on topics in how to retrieve data from a relational database management systems (RDBMS) with an emphasis on Structured Query Language (SQL) queries. More specifically, it focuses on how to retrieve data from one or more tables, how to insert, update, and delete data, how to use functions, how to code summary and subqueries, and how to create and design database.  Students are required to use database applications to practice database design and implementation through assignments and lab exercises and conduct a class project involving the database development and implementation.
-						    </p>
-							<p class="text-left">
-						   Software tools: MySQL, Python
-						 </p>
-						</div>
-
-					</div>
-				</div>
-
-				<!-- INT 2134 -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					 <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-int2134">INT 2134 Database I</a>
-					 </p>
-					</div>
-					<div id="panel-element-int2134" class="panel-collapse collapse">
-						<div class="panel-body">
-						<p class="text-left">
-						This course covers the principles, practices, design, and development of database management systems (DBMS) with an emphasis on the relational database systems. More specifically, it focuses on logical modeling, physical data modeling, normalization, and database query languages. Additionally, this course will explore database administration and security, database implementation, concurrency control, and even business intelligence and data warehousing.  This course emphasizes on hands-on skills. Students are required to use database applications to practice database design and implementation through assignments and lab exercises and conduct a class project involving the data modeling, database development and implementation.
-						</p>
-						<p class="text-left">
-						   Tools: Visio, Microsoft Azure
-						 </p>
-						</div>
-
-					</div>
-				</div>
-
-				<!-- INT 2123 -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					 <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-int2123">INT 2123 Web Design</a>
-					 &nbsp;&nbsp;<a href="https://chihhaoku.github.io/web_design/" target='_blank'>Course Page</a>
-					 </p>
-					</div>
-					<div id="panel-element-int2123" class="panel-collapse collapse">
-						<div class="panel-body">
-						<p class="text-left">
-							This course provides both ‘theory’, e.g., web design and e-commerce and ‘practice’, e.g., HyperText Markup Language (HTML), Cascading Style Sheets (CSS), and JavaScript to train students to create web pages. Students will develop web pages with current technologies and practices. In addition, hands-on practice, website case projects, and web research are emphasized in this class...
-						</p>
-						<p class="text-left">
-						   Language and Tools: HTML5, CSS3, JavaScript, Bootstrap, jQuery, Angular.js, etc.
-						 </p>
-						</div>
-
-					</div>
-				</div>
-
-				<!-- Directed Study -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					 <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-intxxxx">INT xxxx Directed Study </a>
-					 </p>
-					</div>
-					<div id="panel-element-intxxxx" class="panel-collapse collapse">
-						<div class="panel-body">
-						<p class="text-left">
-						    A variety of topics have been covered, which depend on each student's specialty.
-						</p>
-
-						</div>
-
-					</div>
-				</div>
-			    <h4 class="text-left"> Course Teaching at Middle Georgia State University </h4>
-
-				<!-- ITEC 2380 Web Development -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					 <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-itec2380">ITEC 2380 Web Development </a>
-					 </p>
-					</div>
-					<div id="panel-element-itec2380" class="panel-collapse collapse">
-						<div class="panel-body">
-						<p class="text-left">
-						This course introduces concepts and practices associated with Web site development. Focus is on site and page design, page layout techniques, styling methods, coding practices, selection of typography, graphics, and multimedia, accessibility issues, site publishing, testing and maintenance, and site marketing.
-						</p>
-						<p class="text-left">
-						   Softare Tools: Notepad++
-						 </p>
-						</div>
-
-					</div>
-				</div>
-
-				<!-- ITEC 3245 Database Principles -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					 <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-itec3245">ITEC 3245 Database Principles </a>
-					 </p>
-					</div>
-					<div id="panel-element-itec3245" class="panel-collapse collapse">
-						<div class="panel-body">
-						<p class="text-left">
-						This course covers the basic principles and practices behind the modern database management system including: the models and methodologies that enable us to analyze and design data systems; the logical concepts that stand behind “good database design;” and the functional components of the DBMS and how they work together to bring about the management of data.
-						</p>
-						<p class="text-left">
-						   Softare Tools: MS SQL Server
-						 </p>
-						</div>
-
-					</div>
-				</div>
-
-
-				<!-- ITEC 4261 Introduction to Java -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					 <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-itec4261">ITEC 4261 Introduction to Java</a>
-					 </p>
-					</div>
-					<div id="panel-element-itec4261" class="panel-collapse collapse">
-						<div class="panel-body">
-						<p class="text-left">
-						Description: Java is one of the most popular object-oriented programming languages, especially widely used in the modern web and mobile environments. This course focuses on core concepts of object-oriented programming and explores fundamental programming structures and various features of Java. Topics will include OOP design, data types, object and class, interfaces, inheritance, event handling, swing, exceptions, generic programming, collections, and multithreading.
-						</p>
-						<p class="text-left">
-						   Softare Tools: Netbeans, JDK, JRE
-						 </p>
-						</div>
-
-					</div>
-				</div>
-
-				<!-- ITEC 4286 Web Application Development -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					 <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-itec4286">ITEC 4286 Web App Development</a>
-					 </p>
-					</div>
-					<div id="panel-element-itec4286" class="panel-collapse collapse">
-						<div class="panel-body">
-						<p class="text-left">
-						This course covers planning, development, and implementation of Web-based applications. Topics include advanced coverage of common server and browser scripting languages, data structuring and data exchange languages, file and database connectivity options, dynamic page styling, user interaction and personalization, data validation, application installation, deployment, and security issues associated with data-driven Web-based applications.
-						</p>
-						<p class="text-left">
-						   Softare Tools: Visual Studio .Net
-						 </p>
-						</div>
-
-					</div>
-				</div>
-
-				<!-- ITEC 4288 ECommerce -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-					 <p class="text-left">
-						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-254470" href="#panel-element-itec4288">ITEC 4288 E-Commerce</a>
-					 </p>
-					</div>
-					<div id="panel-element-itec4288" class="panel-collapse collapse">
-						<div class="panel-body">
-						<p class="text-left">
-						Students will study applications in web-based electronic commerce systems set in a client/server environment. The course will include surveys of Internet technologies, network architectures, web development techniques, e-commerce models and software, electronic catalogs, purchase and payment systems, interfaces with business systems, marketing and promotion, and design and implementation of e-commerce systems.
-						</p>
-
-						</div>
-
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Scrolling Nav JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/scrolling-nav.js"></script>
-    </section>
-
 </body>
-
 </html>
